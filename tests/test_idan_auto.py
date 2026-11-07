@@ -196,3 +196,17 @@ class Catalog(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Render(unittest.TestCase):
+    def test_render_keeps_whites_and_removes_cast(self):
+        from idan_auto.render import render
+        img = np.asarray(showroom(color=(235, 235, 235), cast=(1.0, 0.9, 0.75)), dtype=np.float32) / 255
+        img[:40] = 1.0                                 # blown ceiling strip
+        out = render(img, {"Exposure2012": 0.0, "Highlights2012": -60, "Shadows2012": 30},
+                     {"wb_ln_rb": 0.25, "wb_ln_g": 0.0})
+        self.assertEqual(out.shape, img.shape)
+        self.assertGreater(out[:30].min(), 0.95)       # blown white stays white
+        mid = (slice(200, 300), slice(300, 600))
+        self.assertLess(out[mid][..., 0].mean() - out[mid][..., 2].mean(),
+                        img[mid][..., 0].mean() - img[mid][..., 2].mean())   # less yellow

@@ -20,8 +20,8 @@ DEFAULT_CONFIG: dict = {
                          "white": 0.55, "red": 0.12, "color": 0.14},
     # Exposure is a blend of "car on target" and "frame on target", so a black
     # car in a bright hall is lifted a little, not until the walls blow out.
-    "exposure_car_weight": 0.6,
-    "frame_target": 0.16,        # target median linear luminance of the frame
+    "exposure_car_weight": 0.85,
+    "frame_target": 0.35,        # target median linear luminance of the frame
     "exposure_bias": 0.0,        # global EV shift (calibrate vs. Lightroom rendering)
     "exposure_damping": 0.85,    # 1.0 = hit the target exactly
     "exposure_limit": 2.0,       # max EV correction either way

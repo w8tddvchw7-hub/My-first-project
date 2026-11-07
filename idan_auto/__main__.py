@@ -126,6 +126,30 @@ The simulation is approximate - judge final results in Lightroom.</p>
                                 encoding="utf-8")
 
 
+def cmd_export(args) -> int:
+    """Write finished JPEGs (for working without Lightroom, e.g. from a phone)."""
+    from .render import render_file
+
+    folder, out = Path(args.folder), Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    cfg = load_config(args.config)
+    if args.target_ev:
+        cfg["exposure_bias"] += args.target_ev
+    model = StyleModel.load(Path(args.model)) if args.model else None
+    photos = [p for p in find_photos(folder, args.recursive)
+              if p.suffix.lower() in {".jpg", ".jpeg", ".tif", ".tiff"}]
+    if not photos:
+        print(f"No JPEG/TIFF photos found in {folder}", file=sys.stderr)
+        return 1
+    for i, p in enumerate(photos, 1):
+        a, s, meta = process(p, cfg, model, args)
+        dst = out / f"{p.stem}_idan.jpg"
+        render_file(p, dst, s, meta)
+        label = "interior" if a.get("scene") == "interior" else a["car_tone"]
+        print(f"[{i}/{len(photos)}] {p.name}: {label} EV {s['Exposure2012']:+.2f} -> {dst}")
+    return 0
+
+
 def cmd_learn(args) -> int:
     from .catalog import iter_catalog_edits
 
@@ -198,6 +222,17 @@ def main(argv=None) -> int:
     r.add_argument("--report-dir")
     r.add_argument("--mask", default="auto", help=mask_help)
     r.set_defaults(func=cmd_run)
+
+    e = sub.add_parser("export", help="render finished JPEGs without Lightroom")
+    e.add_argument("folder")
+    e.add_argument("--out", required=True)
+    e.add_argument("--recursive", "-r", action="store_true")
+    e.add_argument("--model")
+    e.add_argument("--model-weight", type=float)
+    e.add_argument("--config")
+    e.add_argument("--target-ev", type=float, default=0.0)
+    e.add_argument("--mask", default="auto", help=mask_help)
+    e.set_defaults(func=cmd_export)
 
     l = sub.add_parser("learn", help="learn your style from a Lightroom catalog")
     l.add_argument("catalog")

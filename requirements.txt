@@ -1,0 +1,6 @@
+numpy>=1.24
+Pillow>=10
+rawpy>=0.19        # reads the preview + white balance out of RAW files
+exifread>=3.0      # EXIF fallback when exiftool is not installed
+# Optional, strongly recommended - AI isolation of the car:
+# rembg[cpu]>=2.0

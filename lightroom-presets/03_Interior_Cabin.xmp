@@ -1,0 +1,72 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 7.0-c000 1.000000, 0000/00/00-00:00:00">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
+   crs:PresetType="Normal"
+   crs:Cluster=""
+   crs:UUID="49EDA75D22C74DAD9DEBA5BB97641CFC"
+   crs:SupportsAmount="False"
+   crs:SupportsColor="True"
+   crs:SupportsMonochrome="False"
+   crs:SupportsHighDynamicRange="True"
+   crs:SupportsNormalDynamicRange="True"
+   crs:SupportsSceneReferred="True"
+   crs:SupportsOutputReferred="True"
+   crs:CameraModelRestrictive="False"
+   crs:Copyright=""
+   crs:ContactInfo=""
+   crs:Version="15.0"
+   crs:ProcessVersion="11.0"
+   crs:SharpenRadius="+1.0"
+   crs:SharpenDetail="25"
+   crs:SharpenEdgeMasking="60"
+   crs:LuminanceSmoothing="15"
+   crs:LuminanceNoiseReductionDetail="50"
+   crs:ColorNoiseReduction="25"
+   crs:PostCropVignetteAmount="0"
+   crs:GrainAmount="0"
+   crs:HueAdjustmentRed="0"
+   crs:HueAdjustmentOrange="0"
+   crs:HueAdjustmentYellow="0"
+   crs:HueAdjustmentGreen="0"
+   crs:HueAdjustmentAqua="0"
+   crs:HueAdjustmentBlue="0"
+   crs:HueAdjustmentPurple="0"
+   crs:HueAdjustmentMagenta="0"
+   crs:Exposure2012="+0.35"
+   crs:Contrast2012="+5"
+   crs:Highlights2012="-85"
+   crs:Shadows2012="+70"
+   crs:Whites2012="+10"
+   crs:Blacks2012="-10"
+   crs:Texture="+10"
+   crs:Clarity2012="+5"
+   crs:Dehaze="+5"
+   crs:Vibrance="+10"
+   crs:Saturation="-3"
+   crs:Sharpness="40"
+   crs:SaturationAdjustmentOrange="-5"
+   crs:SaturationAdjustmentYellow="-30"
+   crs:LuminanceAdjustmentOrange="+8"
+   crs:LensProfileEnable="1"
+   crs:LensProfileSetup="LensDefaults"
+   crs:AutoLateralCA="1"
+   crs:HasSettings="True">
+   <crs:Name><rdf:Alt><rdf:li xml:lang="x-default">Interior Cabin</rdf:li></rdf:Alt></crs:Name>
+   <crs:ShortName><rdf:Alt><rdf:li xml:lang="x-default"/></rdf:Alt></crs:ShortName>
+   <crs:SortName><rdf:Alt><rdf:li xml:lang="x-default"/></rdf:Alt></crs:SortName>
+   <crs:Group><rdf:Alt><rdf:li xml:lang="x-default">Car Dealership</rdf:li></rdf:Alt></crs:Group>
+   <crs:Description><rdf:Alt><rdf:li xml:lang="x-default">For seats, dashboard and screens. Strong shadow lift, smooth leather, controlled window highlights.</rdf:li></rdf:Alt></crs:Description>
+   <crs:ToneCurvePV2012><rdf:Seq>
+    <rdf:li>0, 10</rdf:li>
+    <rdf:li>64, 66</rdf:li>
+    <rdf:li>128, 132</rdf:li>
+    <rdf:li>192, 194</rdf:li>
+    <rdf:li>255, 252</rdf:li>
+   </rdf:Seq></crs:ToneCurvePV2012>
+   <crs:ToneCurvePV2012Red><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Red>
+   <crs:ToneCurvePV2012Green><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Green>
+   <crs:ToneCurvePV2012Blue><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Blue>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

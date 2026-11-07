@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+idan_auto_reports/
+idan_style.json
+*.xmp.bak

@@ -1,0 +1,70 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 7.0-c000 1.000000, 0000/00/00-00:00:00">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
+   crs:PresetType="Normal"
+   crs:Cluster=""
+   crs:UUID="37CD81FFCBF048E5B7C12A7A1AE7210E"
+   crs:SupportsAmount="False"
+   crs:SupportsColor="True"
+   crs:SupportsMonochrome="False"
+   crs:SupportsHighDynamicRange="True"
+   crs:SupportsNormalDynamicRange="True"
+   crs:SupportsSceneReferred="True"
+   crs:SupportsOutputReferred="True"
+   crs:CameraModelRestrictive="False"
+   crs:Copyright=""
+   crs:ContactInfo=""
+   crs:Version="15.0"
+   crs:ProcessVersion="11.0"
+   crs:SharpenRadius="+1.0"
+   crs:SharpenDetail="25"
+   crs:SharpenEdgeMasking="60"
+   crs:LuminanceSmoothing="15"
+   crs:LuminanceNoiseReductionDetail="50"
+   crs:ColorNoiseReduction="25"
+   crs:PostCropVignetteAmount="0"
+   crs:GrainAmount="0"
+   crs:HueAdjustmentRed="0"
+   crs:HueAdjustmentOrange="0"
+   crs:HueAdjustmentYellow="0"
+   crs:HueAdjustmentGreen="0"
+   crs:HueAdjustmentAqua="0"
+   crs:HueAdjustmentBlue="0"
+   crs:HueAdjustmentPurple="0"
+   crs:HueAdjustmentMagenta="0"
+   crs:Exposure2012="+0.10"
+   crs:Contrast2012="+20"
+   crs:Highlights2012="-50"
+   crs:Shadows2012="+30"
+   crs:Whites2012="+25"
+   crs:Blacks2012="-25"
+   crs:Texture="+35"
+   crs:Clarity2012="+25"
+   crs:Dehaze="+10"
+   crs:Vibrance="+15"
+   crs:Saturation="0"
+   crs:Sharpness="65"
+   crs:SaturationAdjustmentYellow="-20"
+   crs:LensProfileEnable="1"
+   crs:LensProfileSetup="LensDefaults"
+   crs:AutoLateralCA="1"
+   crs:HasSettings="True">
+   <crs:Name><rdf:Alt><rdf:li xml:lang="x-default">Detail Wheels and Badges</rdf:li></rdf:Alt></crs:Name>
+   <crs:ShortName><rdf:Alt><rdf:li xml:lang="x-default"/></rdf:Alt></crs:ShortName>
+   <crs:SortName><rdf:Alt><rdf:li xml:lang="x-default"/></rdf:Alt></crs:SortName>
+   <crs:Group><rdf:Alt><rdf:li xml:lang="x-default">Car Dealership</rdf:li></rdf:Alt></crs:Group>
+   <crs:Description><rdf:Alt><rdf:li xml:lang="x-default">Close-ups of wheels, lights, logos and stitching. Maximum crisp detail.</rdf:li></rdf:Alt></crs:Description>
+   <crs:ToneCurvePV2012><rdf:Seq>
+    <rdf:li>0, 0</rdf:li>
+    <rdf:li>55, 48</rdf:li>
+    <rdf:li>128, 130</rdf:li>
+    <rdf:li>200, 208</rdf:li>
+    <rdf:li>255, 255</rdf:li>
+   </rdf:Seq></crs:ToneCurvePV2012>
+   <crs:ToneCurvePV2012Red><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Red>
+   <crs:ToneCurvePV2012Green><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Green>
+   <crs:ToneCurvePV2012Blue><rdf:Seq><rdf:li>0, 0</rdf:li><rdf:li>255, 255</rdf:li></rdf:Seq></crs:ToneCurvePV2012Blue>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

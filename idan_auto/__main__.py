@@ -76,7 +76,8 @@ def cmd_run(args) -> int:
         why = "; ".join(meta["reasons"])
         if "model_weight" in meta:
             why += f"; style model weight {meta['model_weight']}"
-        print(f"[{i}/{len(photos)}] {p.name}: {a['car_color']}/{a['car_tone']} "
+        label = "interior" if a.get("scene") == "interior" else f"{a['car_color']}/{a['car_tone']}"
+        print(f"[{i}/{len(photos)}] {p.name}: {label} "
               f"EV {s['Exposure2012']:+.2f} -> {status}\n      {why}")
         rows.append({"analysis": jsonable(a), "settings": s, "meta": meta, "status": status})
         if report_dir:
@@ -108,7 +109,7 @@ def _write_html(d: Path, rows: list[dict]) -> None:
         vals = "".join(f"<td>{s.get(k, '')}</td>" for k in KEY_COLS)
         trs.append(
             f"<tr><td class=name>{html.escape(Path(a['file']).name)}<br><small>"
-            f"{html.escape(a['car_color'])} / {html.escape(a['car_tone'])}"
+            f"{'interior' if a.get('scene') == 'interior' else html.escape(a['car_color'] + ' / ' + a['car_tone'])}"
             f"{' · evening' if a['evening'] else ''}{' · hall light' if a['artificial_light'] else ''}"
             f"<br>ISO {a.get('iso') or '?'} · mask: {a['mask_source']}</small></td>"
             f"<td><img src='img/{i:04d}_{html.escape(stem)}.jpg'></td>{vals}"

@@ -234,8 +234,10 @@ def measure(rgb: np.ndarray, mask: np.ndarray) -> dict:
         "clip_hi": float((rgb.max(-1) > 0.985).mean()),
         "clip_lo": float((L < 0.02).mean()),
         "mask_frac": float(mask.mean()),
-        "car_L": float(np.median(L[car])),
-        "car_lin": float(np.median(Llin[car])),
+        # Paint brightness: the 70th percentile of the car, so the grille,
+        # windows and tyres (dark, but not paint) do not drag it down.
+        "car_L": float(np.percentile(L[car], 70)),
+        "car_lin": float(np.percentile(Llin[car], 70)),
         "car_clip_hi": float((rgb.max(-1)[car] > 0.985).mean()),
     }
 
@@ -267,7 +269,7 @@ def measure(rgb: np.ndarray, mask: np.ndarray) -> dict:
         tone = "red" if name == "red" else "color"
     else:
         v = f["car_L_norm"]
-        name = tone = "black" if v < 0.22 else "dark" if v < 0.40 else "silver" if v < 0.64 else "white"
+        name = tone = "black" if v < 0.25 else "dark" if v < 0.40 else "silver" if v < 0.64 else "white"
     f["car_color"] = name
     f["car_tone"] = tone
 
@@ -293,6 +295,12 @@ def analyze(path: Path, mask_method: str = "auto", keep_preview: bool = False) -
     a.update(read_exif(path))
     a.update(measure(rgb, mask))
 
+    # Interior / detail shot (seats, dashboard, wheel): the frame is mostly
+    # dark cabin, unlike a bright showroom exterior.
+    # Compared with the frame's own highlights, so an under-exposed exterior
+    # (dark everywhere) is not mistaken for a cabin (dark next to bright windows).
+    p98_lin = float(srgb_to_linear(np.array(a["frame_p98"])))
+    a["scene"] = "interior" if a["frame_lin_med"] < 0.12 * max(p98_lin, 0.05) else "exterior"
     hour = a["datetime"].hour if a["datetime"] else None
     iso = a["iso"] or 100
     a["evening"] = bool(hour is not None and (hour >= 18 or hour < 6))

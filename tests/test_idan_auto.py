@@ -85,6 +85,24 @@ class Analysis(unittest.TestCase):
         self.assertGreater(dark["Exposure2012"], bright["Exposure2012"] + 0.6)
 
 
+    def test_interior_detected(self):
+        img = Image.new("RGB", (900, 600), (20, 18, 18))         # dark cabin
+        ImageDraw.Draw(img).rectangle([0, 0, 900, 120], fill=(250, 250, 250))  # window
+        ImageDraw.Draw(img).rectangle([300, 250, 600, 550], fill=(200, 30, 30))  # red seat
+        p = self.dir / "interior.jpg"
+        img.save(p, quality=95)
+        a = analyze(p, mask_method="heuristic")
+        s = clamp_and_round(compute_settings(a, DEFAULT_CONFIG)[0])
+        self.assertEqual(a["scene"], "interior")
+        self.assertLessEqual(s["Exposure2012"], 1.0)
+        self.assertIn("interior / detail shot", compute_settings(a, DEFAULT_CONFIG)[1]["reasons"])
+
+    def test_dark_exterior_is_not_interior(self):
+        p = self.dir / "dark_ext.jpg"
+        showroom(color=(150, 150, 152), gain=0.4).save(p, quality=95)
+        self.assertEqual(analyze(p, mask_method="heuristic")["scene"], "exterior")
+
+
 class RawPath(unittest.TestCase):
     def fake_analysis(self, **kw):
         a = dict(raw=True, as_shot_kelvin=5500.0, car_tone="white", car_color="white",

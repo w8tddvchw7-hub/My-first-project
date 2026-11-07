@@ -1,0 +1,16 @@
+{
+  "_about": "Premium dealership look: bright clean showroom, deep blacks, crisp paint and chrome, rich interior. Use: --config profiles/premium.json",
+  "exposure_bias": 0.12,
+  "base": {
+    "Contrast2012": 18, "Highlights2012": -45, "Shadows2012": 22,
+    "Whites2012": 18, "Blacks2012": -20, "Texture": 18, "Clarity2012": 14,
+    "Dehaze": 8, "Vibrance": 16, "Saturation": 2, "Sharpness": 50
+  },
+  "by_tone": {
+    "silver": {"Highlights2012": -15, "Whites2012": -4, "Clarity2012": 6, "Texture": 6, "Dehaze": 3}
+  },
+  "interior": {
+    "deltas": {"Highlights2012": -35, "Shadows2012": 18, "Whites2012": -6,
+               "Blacks2012": 2, "Clarity2012": 2, "Vibrance": 0, "Texture": 6}
+  }
+}

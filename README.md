@@ -51,6 +51,15 @@ python -m idan_auto export "/Photos/JPEGs" --out "/Photos/Edited"
 
 אותן החלטות כמו בקובץ ה-XMP, אבל הכלי מרנדר בעצמו JPEG סופי (מנוע `idan_auto/render.py`). יש בו מיפוי טונים מקומי ששומר על קצוות, כך שאין הילות סביב הגה או רכב. אזורים שרופים במקור נשארים לבנים ונקיים במקום להפוך לכתמים אפורים. זה שימושי כשעובדים מהטלפון, אבל עריכה ב-Lightroom על קובץ RAW תמיד תיתן יותר מרחב.
 
+### פרופיל פרימיום
+
+```bash
+python -m idan_auto export FOLDER --out OUT --config profiles/premium.json
+python -m idan_auto run FOLDER --config profiles/premium.json      # אותו מראה גם ב-XMP ל-Lightroom
+```
+
+אולם בהיר ונקי, שחורים עמוקים, צבע וכרום חדים, ופנים עשיר. בלי הפרופיל מקבלים מראה טבעי ועדין יותר.
+
 ## "ללמוד את הסגנון שלך"
 
 ```bash
